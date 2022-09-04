@@ -18,12 +18,11 @@ class Solution
 
     def solve2(ary, b)
         min, max, idx = find_bitonic_point(ary)
-        
+        answer = 0
+
         return -1 if b < min || b > max
-        a = b_search(ary[..idx], b)
-        return a if a
-        b = reverse_b_search(ary[idx+1..], b)
-        return idx + b + 1 if b
+        return answer if answer = b_search(ary[..idx], b)
+        return idx + answer + 1 if answer = reverse_b_search(ary[idx+1..], b)
         -1
     end
 
@@ -91,20 +90,23 @@ p solver.solve2([1,3,5,6,10,4,-1,-10], -10)
 # Benchmark
 # require 'benchmark/ips'
 # Benchmark.ips do |x|
-#   SAMPLE_ARRAY = [5, 6, 7, 8, 9, 10, 3, 2, 1].freeze
+#   SAMPLE_ARRAY = [5, 6, 7, 8, 9, 10, 3, 2, 1, -1, -10, -33].freeze
 #   solver = Solution.new
 
 #   x.report("Array#index") do
 #     solver.solve(SAMPLE_ARRAY, 3)
 #     solver.solve(SAMPLE_ARRAY, 0)
+#     solver.solve(SAMPLE_ARRAY, -33)
 #   end
 #   x.report("bsearch") do
 #     solver.solve1(SAMPLE_ARRAY, 3)
 #     solver.solve1(SAMPLE_ARRAY, 0)
+#     solver.solve1(SAMPLE_ARRAY, -33)
 #   end
 #   x.report("better bsearch") do
 #     solver.solve2(SAMPLE_ARRAY, 3)
 #     solver.solve2(SAMPLE_ARRAY, 0)
+#     solver.solve2(SAMPLE_ARRAY, -33)
 #   end
 
 #   x.compare!
