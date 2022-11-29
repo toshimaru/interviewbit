@@ -21,10 +21,10 @@ a few TBs
 2. LRU
 3. LFU
 
-
 ### See also
 
-<https://www.interviewbit.com/problems/lru-cache/>
+- <https://www.interviewbit.com/problems/lru-cache/>
+- <https://leetcode.com/problems/lru-cache/>
 
 ## Access Pattern
 
@@ -33,7 +33,6 @@ a few TBs
 - Write back cache
 
 <https://www.computerweekly.com/feature/Write-through-write-around-write-back-Cache-explained>
-
 
 ## Points
 
